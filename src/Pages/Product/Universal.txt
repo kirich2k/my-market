@@ -1,0 +1,35 @@
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function Universal() {
+    const PathUrl = () => {
+        let location = useLocation();
+        const [path, setPath] = useState();
+        useEffect(() => {
+            // console.log(location.pathname);
+            setPath(location.pathname);
+        }, [location.pathname]);
+        let props = path;
+        // console.log(path);
+        if (props === "/universal") {
+            console.log(props);
+            return (
+                <>
+                    <h1>Universal</h1>
+                </>
+            );
+        } else if (props === "/earring") {
+            console.log(props);
+            return (
+                <>
+                    <h1>Earring</h1>
+                </>
+            );
+        }
+        return path;
+    };
+    return (
+        <PathUrl />
+    );
+}
+//ПАШЕТ НО БЕСПОЛЕЗНАЯ ТЕМА(Я ТАК ПОКА ДУМАЮ)

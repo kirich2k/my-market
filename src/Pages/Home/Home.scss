@@ -1,0 +1,141 @@
+.main__inner {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    .article__sale {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 15px;
+        &__box {
+            max-width: 432px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e5e5e5;
+            transition: all 0.2s linear;
+            &:first-child {
+                margin-right: 10px;
+            }
+            &__img {
+                max-width: 420px;
+                width: 100%;
+                max-height: 115px;
+                height: 100%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 115px;
+                }
+            }
+            &__description {
+                height: 48px;
+                display: flex;
+                justify-content: center;
+                padding: 10px 10px;
+                font-size: 14px;
+            }
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+    .article__catalog {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        &__title {
+            font-family: "Roboto-Bold";
+            font-size: 25px;
+        }
+        &__container {
+            display: grid;
+            grid-template-areas: "earring rings pendant";
+            grid-template-columns: repeat(3, 1fr);
+            &__inner {
+                max-width: 265px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                margin-top: 15px;
+                margin-right: 20px;
+                border: 1px solid #e5e5e5;
+                border-radius: 15px;
+                transition: all 0.2s linear;
+                &__card > img {
+                    max-width: 263px;
+                    width: 100%;
+                    height: 263px;
+                }
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0px 3px 12px #cacaca;
+                    .article__catalog__container__inner__card__description {
+                        color: red;
+                    }
+                }
+                &#pendant {
+                    grid-area: pendant;
+                }
+                &#rings {
+                    grid-area: rings;
+                }
+                &#earring {
+                    grid-area: earring;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1170px) {
+    .article__catalog__container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: 1fr 1fr !important;
+        grid-template-areas: "earring  rings" "pendant pendant" !important;
+        #pendant {
+            grid-column-start: 1 !important;
+            grid-column-end: 3 !important;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .main__inner {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .article__sale {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        &__box {
+            margin: 0px !important;
+            margin-bottom: 10px !important;
+            &:last-child {
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+    .article__catalog__title {
+        text-align: center !important;
+    }
+    .article__catalog {
+        justify-content: center !important;
+        &__container {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(3, 1fr) !important;
+            grid-template-areas: "earring"  "rings" "pendant" !important;
+            #pendant {
+                grid-column-start: unset !important;
+                grid-column-end: unset !important;
+            }
+        }
+    }
+}

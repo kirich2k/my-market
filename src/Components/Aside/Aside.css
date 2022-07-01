@@ -1,0 +1,76 @@
+aside {
+  background-color: #ffffff;
+  max-width: 300px;
+  min-height: 141px;
+  width: 100%;
+  margin-right: 15px;
+  margin-bottom: auto;
+  border-radius: 10px;
+}
+aside .aside__nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+aside .aside__nav__link {
+  position: relative;
+  margin: 15px 0px;
+}
+aside .aside__nav__link:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  margin-top: 5px;
+  height: 1px;
+  left: 0;
+  bottom: -3px;
+  background-color: red;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+aside .aside__nav__link:hover:after {
+  transform: scaleX(1);
+}
+aside .aside__nav #earring::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: -4px;
+  width: 25px;
+  height: 25px;
+  background-image: url(./img/earring.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+aside .aside__nav #rings::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: -4px;
+  width: 25px;
+  height: 25px;
+  background-image: url(./img/rings.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+aside .aside__nav #pendant::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: -4px;
+  width: 25px;
+  height: 25px;
+  background-image: url(./img/pendant.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+@media (max-width: 1100px) {
+  aside {
+    display: none;
+  }
+}/*# sourceMappingURL=Aside.css.map */

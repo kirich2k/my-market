@@ -1,0 +1,42 @@
+.main__error {
+  margin-top: 50px;
+  padding: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.main__error__img {
+  max-width: 180px;
+  max-height: 180px;
+  width: 100%;
+}
+.main__error__title {
+  margin-top: 20px;
+  text-align: center;
+}
+.main__error__link {
+  margin-top: 15px;
+}
+.main__error__link__text {
+  color: red;
+  position: relative;
+  transition: all 0.3s linear;
+}
+.main__error__link__text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: red;
+  height: 1px;
+  bottom: -3px;
+  left: 0px;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+.main__error__link:hover .main__error__link__text {
+  color: black;
+}
+.main__error__link:hover .main__error__link__text::after {
+  transform: scaleX(1);
+}/*# sourceMappingURL=style.css.map */

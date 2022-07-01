@@ -1,0 +1,44 @@
+.main__error {
+    margin-top: 50px;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    &__img {
+        max-width: 180px;
+        max-height: 180px;
+        width: 100%;
+    }
+    &__title {
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__link {
+        margin-top: 15px;
+        &__text {
+            color: red;
+            position: relative;
+            transition: all 0.3s linear;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                background-color: red;
+                height: 1px;
+                bottom: -3px;
+                left: 0px;
+                transition: 0.3s;
+                transform: scaleX(0);
+            }
+        }
+        &:hover {
+            .main__error__link__text {
+                color: black;
+            }
+            .main__error__link__text::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}

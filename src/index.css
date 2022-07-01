@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Roboto-Regular", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: local("Roboto Thin"), local("Roboto-Thin"),
+        url(./fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: local("Roboto Light"), local("Roboto-Light"),
+        url(./fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: local("Roboto Regular"), local("Roboto-Regular"),
+        url(./fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: local("Roboto Bold"), local("Roboto-Bold"),
+        url(./fonts/Roboto/Roboto-Bold.ttf);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    pointer-events: none;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+html,
+body {
+    height: calc(100vh + 0.5px);
+    line-height: 1;
+    font-size: 16px;
+    color: black;
+    background-color: #f6f6f6;
+}

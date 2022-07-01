@@ -1,0 +1,139 @@
+.filter__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0px 0px 15px;
+}
+.filter__inner__categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter__inner__categories__btn {
+  margin: 5px 0px;
+  margin-right: 10px;
+  padding: 5px 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 15px;
+  transition: all 0.2s linear;
+}
+.filter__inner__categories__btn__close {
+  position: relative;
+  display: none;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.filter__inner__categories__btn__close::before {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 7.5px;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  transform: rotate(45deg);
+  transition: all 0.2s linear;
+}
+.filter__inner__categories__btn__close::after {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 7.5px;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  transform: rotate(-45deg);
+  transition: all 0.2s linear;
+}
+.filter__inner__categories__btn._active {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 15px !important;
+  color: red;
+  cursor: default;
+}
+.filter__inner__categories__btn._active .filter__inner__categories__btn__close {
+  display: block;
+  z-index: 15;
+}
+.filter__inner__categories__btn._active .filter__inner__categories__btn__close::before,
+.filter__inner__categories__btn._active .filter__inner__categories__btn__close::after {
+  display: block;
+}
+.filter__inner__categories__btn:last-child {
+  margin-right: 0px;
+}
+.filter__inner__categories__btn:hover {
+  color: red;
+}
+.filter__inner__sort {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.filter__inner__sort__select {
+  position: relative;
+  color: red;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.filter__inner__sort__select::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed red;
+}
+.filter__inner__sort__list {
+  position: absolute;
+  bottom: -110px;
+  left: 0px;
+  max-width: 270px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 15px;
+  z-index: 30;
+}
+.filter__inner__sort__list__inner {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+}
+.filter__inner__sort__list__inner._active {
+  color: red;
+  background-color: #ffecec;
+}
+.filter__inner__sort__list__inner._active:first-child {
+  border-radius: 15px 15px 0px 0px;
+}
+.filter__inner__sort__list__inner._active:last-child {
+  border-radius: 0px 0px 15px 15px;
+}
+.filter__inner__sort__list__inner:hover {
+  color: red;
+  background-color: #f4f4f4;
+}
+.filter__inner__sort__list__inner:hover:first-child {
+  border-radius: 15px 15px 0px 0px;
+}
+.filter__inner__sort__list__inner:hover:last-child {
+  border-radius: 0px 0px 15px 15px;
+}/*# sourceMappingURL=Filter.css.map */

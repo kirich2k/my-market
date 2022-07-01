@@ -1,0 +1,132 @@
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin-top: auto;
+}
+footer .footer__inner {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 30px 10px;
+}
+footer .footer__inner__logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .footer__inner__logo img {
+  width: 200px;
+}
+footer .footer__inner__info__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: "Roboto-Bold";
+  font-size: 20px;
+}
+footer .footer__inner__info__title li, footer .footer__inner__info__title__link {
+  position: relative;
+  margin: 10px 0px;
+  font-family: "Roboto-Regular";
+  font-size: 17px;
+  list-style-type: none;
+}
+footer .footer__inner__info__title li:first-child, footer .footer__inner__info__title__link:first-child {
+  margin-top: 20px;
+}
+footer .footer__inner__info__title__link:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  margin-top: 5px;
+  height: 1px;
+  left: 0;
+  bottom: -3px;
+  background-color: red;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+footer .footer__inner__info__title__link:hover:after {
+  transform: scaleX(1);
+}
+footer .footer__inner__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+footer .footer__inner__contact__title {
+  font-family: "Roboto-Bold";
+  font-size: 20px;
+}
+footer .footer__inner__contact__number {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+footer .footer__inner__contact__number::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: -18px;
+  width: 35px;
+  height: 35px;
+  background-image: url(./img/phone.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+}
+footer .footer__inner__contact__mail {
+  position: relative;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+footer .footer__inner__contact__mail::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: -2px;
+  width: 22px;
+  height: 22px;
+  background-image: url(./img/post.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+}
+footer .footer__inner__contact__img {
+  max-width: 150px;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+footer .footer__inner__contact__img__link {
+  transition: all 0.2s linear;
+}
+footer .footer__inner__contact__img__link:hover {
+  transform: scale(1.1);
+}
+footer .footer__inner__contact__img__link img {
+  width: 40px;
+}
+
+@media (max-width: 600px) {
+  .footer__inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: unset !important;
+  }
+  .footer__inner div:nth-child(1), .footer__inner div:nth-child(2) {
+    margin-bottom: 30px !important;
+  }
+  .footer__inner__contact {
+    align-items: center !important;
+  }
+}/*# sourceMappingURL=Footer.css.map */
