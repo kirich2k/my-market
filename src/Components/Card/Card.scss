@@ -1,9 +1,8 @@
-.article__catalog__container__inner__card {
+.card {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    .article__catalog__container__inner__card__description {
+    &__description {
         display: flex;
         justify-content: center;
         padding: 10px 0px;

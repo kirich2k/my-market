@@ -9,11 +9,11 @@ type cardProps = {
 const Card:React.FC<cardProps> = ({id, img, name}) => {
     return (
         <div
-            className="article__catalog__container__inner__card"
+            className="card"
             id={'"' + id + '"'}
         >
             <img src={img} alt={'"' + id + '"'} draggable="false" />
-            <span className="article__catalog__container__inner__card__description">
+            <span className="card__description">
                 {name}
             </span>
         </div>
