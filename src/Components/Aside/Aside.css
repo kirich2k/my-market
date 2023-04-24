@@ -1,23 +1,15 @@
-aside {
-  background-color: #ffffff;
-  max-width: 300px;
-  min-height: 141px;
-  width: 100%;
-  margin-right: 15px;
-  margin-bottom: auto;
-  border-radius: 10px;
-}
-aside .aside__nav {
+/*---Components---*/
+.nav {
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-aside .aside__nav__link {
+.nav__link {
   position: relative;
   margin: 15px 0px;
 }
-aside .aside__nav__link:after {
+.nav__link:after {
   content: "";
   width: 100%;
   position: absolute;
@@ -29,10 +21,10 @@ aside .aside__nav__link:after {
   transition: 0.3s;
   transform: scaleX(0);
 }
-aside .aside__nav__link:hover:after {
+.nav__link:hover:after {
   transform: scaleX(1);
 }
-aside .aside__nav #earring::before {
+.nav #earring::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -44,7 +36,7 @@ aside .aside__nav #earring::before {
   background-repeat: no-repeat;
   background-size: 25px 25px;
 }
-aside .aside__nav #rings::before {
+.nav #rings::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -56,7 +48,7 @@ aside .aside__nav #rings::before {
   background-repeat: no-repeat;
   background-size: 25px 25px;
 }
-aside .aside__nav #pendant::before {
+.nav #pendant::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -69,8 +61,18 @@ aside .aside__nav #pendant::before {
   background-size: 25px 25px;
 }
 
+.aside {
+  background-color: #ffffff;
+  max-width: 300px;
+  min-height: 141px;
+  width: 100%;
+  margin-right: 15px;
+  margin-bottom: auto;
+  border-radius: 10px;
+}
+
 @media (max-width: 1100px) {
-  aside {
+  .aside {
     display: none;
   }
 }/*# sourceMappingURL=Aside.css.map */

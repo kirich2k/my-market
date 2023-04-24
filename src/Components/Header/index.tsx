@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import "./Header.css";
 import logo from "./img/logo_mini.jpg";
 import { Link } from "react-router-dom";
@@ -54,31 +54,31 @@ const Header: React.FC = () => {
 
     function btnToggle() {
         if (root__inner && windowWidth < 450) {
-            Active === " _active" ? setActive("") : setActive(" _active");
+            Active === " -active" ? setActive("") : setActive(" -active");
             if (
-                root__inner.classList.contains("_fixed") === false &&
-                Active !== " _active" &&
+                root__inner.classList.contains("-fixed") === false &&
+                Active !== " -active" &&
                 Can === "true"
             ) {
-                root__inner.classList.add("_fixed");
+                root__inner.classList.add("-fixed");
             } else if (
-                root__inner.classList.contains("_fixed") === true &&
-                Active === " _active"
+                root__inner.classList.contains("-fixed") === true &&
+                Active === " -active"
             ) {
-                root__inner.classList.remove("_fixed");
+                root__inner.classList.remove("-fixed");
             }
         } else {
             setActive("");
-            if (root__inner && root__inner.classList.contains("_fixed") === true) {
-                root__inner.classList.remove("_fixed");
+            if (root__inner && root__inner.classList.contains("-fixed") === true) {
+                root__inner.classList.remove("-fixed");
             }
         }
     }
-    React.useEffect(() => {
+    useEffect(() => {
         const adaptiv = () => {
             if (window.innerWidth >= 450) {
                 if (Active === "" && Can === "false" && root__inner) {
-                    root__inner.classList.remove("_fixed");
+                    root__inner.classList.remove("-fixed");
                 }
             }
         };
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
     }, []);
     const { items, totalPrice } = useSelector((state: RootStore) => state.cart);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (isMounted.current) {
             const json = JSON.stringify(items);
             localStorage.setItem("cart", json);
@@ -114,27 +114,27 @@ const Header: React.FC = () => {
         <>
             <header className="header">
                 <div className="header__inner">
-                    <Link to="/" className="header__inner__logo">
+                    <Link to="/" className="header__logo logo">
                         <img
                             src={logo}
                             alt="Jewery"
-                            className="header__inner__logo__img"
+                            className="logo__img"
                         />
                     </Link>
-                    <nav className="header__inner__nav">
-                        <Link to="/" className="header__inner__nav__link">
+                    <nav className="header__nav nav">
+                        <Link to="/" className="nav__link">
                             Главная
                         </Link>
                         <Link
                             to="/basket"
-                            className="header__inner__nav__link"
+                            className="nav__link"
                             id="basket"
                         >
                             {items.length === 0 ? "Корзина" : totalPrice + " ₽"}
                         </Link>
                         <Link
                             to="/entrance"
-                            className="header__inner__nav__link"
+                            className="nav__link"
                             id="login"
                         >
                             Вход
@@ -142,29 +142,29 @@ const Header: React.FC = () => {
                     </nav>
                     <nav
                         ref={burgerBtnRef}
-                        className={"header__inner__burger" + Active}
+                        className={"header__burger burger" + Active}
                         id="burger"
                         onClick={() => btnToggle()}
                     >
-                        <span className="header__inner__burger__line"></span>
+                        <span className="burger__line"></span>
                     </nav>
                     <nav
                         ref={burgerMenuRef}
-                        className={"header__inner__menu" + Active}
+                        className={"header__menu menu" + Active}
                     >
-                        <Link to="/" className="header__inner__menu__link">
+                        <Link to="/" className="menu__link">
                             Главная
                         </Link>
                         <Link
                             to='/basket'
-                            className="header__inner__menu__link"
+                            className="menu__link"
                             id="basket"
                         >
                             Корзина
                         </Link>
                         <Link
                             to="/entrance"
-                            className="header__inner__menu__link"
+                            className="menu__link"
                             id="login"
                         >
                             Вход

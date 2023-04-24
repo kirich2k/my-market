@@ -3,15 +3,15 @@ import "./Aside.css";
 
 const Aside: React.FC =() => {
     return (
-        <aside>
-            <nav className="aside__nav">
-                <Link to="/earring" className="aside__nav__link" id="earring">
+        <aside className="aside">
+            <nav className="aside__nav nav">
+                <Link to="/earring" className="nav__link" id="earring">
                     Серьги
                 </Link>
-                <Link to="/rings" className="aside__nav__link" id="rings">
+                <Link to="/rings" className="nav__link" id="rings">
                     Кольца
                 </Link>
-                <Link to="/pendant" className="aside__nav__link" id="pendant">
+                <Link to="/pendant" className="nav__link" id="pendant">
                     Подвески
                 </Link>
             </nav>
