@@ -1,17 +1,11 @@
-.main__inner {
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.main__inner .article__sale {
-  width: 100%;
+/*---Components---*/
+.sale {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: nowrap;
   margin-top: 15px;
 }
-.main__inner .article__sale__box {
+.sale__box {
   max-width: 432px;
   width: 100%;
   display: flex;
@@ -20,45 +14,45 @@
   border: 1px solid #e5e5e5;
   transition: all 0.2s linear;
 }
-.main__inner .article__sale__box:first-child {
+.sale__box:first-child {
   margin-right: 10px;
 }
-.main__inner .article__sale__box__img {
+.sale__box:hover {
+  transform: scale(1.03);
+}
+.sale__img {
   max-width: 420px;
   width: 100%;
   max-height: 115px;
   height: 100%;
   overflow: hidden;
 }
-.main__inner .article__sale__box__img img {
+.sale__img img {
   width: 100%;
   height: 115px;
 }
-.main__inner .article__sale__box__description {
+.sale__description {
   height: 48px;
   display: flex;
   justify-content: center;
   padding: 10px 10px;
   font-size: 14px;
 }
-.main__inner .article__sale__box:hover {
-  transform: scale(1.03);
-}
-.main__inner .article__catalog {
+
+.catalog {
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
 }
-.main__inner .article__catalog__title {
+.catalog__title {
   font-family: "Roboto-Bold";
   font-size: 25px;
 }
-.main__inner .article__catalog__container {
+.catalog__container {
   display: grid;
   grid-template-areas: "earring rings pendant";
   grid-template-columns: repeat(3, 1fr);
 }
-.main__inner .article__catalog__container__inner {
+.catalog__inner {
   max-width: 265px;
   width: 100%;
   display: flex;
@@ -71,35 +65,43 @@
   border-radius: 15px;
   transition: all 0.2s linear;
 }
-.main__inner .article__catalog__container__inner__card > img {
-  max-width: 263px;
-  width: 100%;
-  height: 263px;
-}
-.main__inner .article__catalog__container__inner:hover {
+.catalog__inner:hover {
   transform: scale(1.02);
   box-shadow: 0px 3px 12px #cacaca;
 }
-.main__inner .article__catalog__container__inner:hover .article__catalog__container__inner__card__description {
+.catalog__inner:hover .article__catalog__container__inner__card__description {
   color: red;
 }
-.main__inner .article__catalog__container__inner#pendant {
+.catalog__inner#pendant {
   grid-area: pendant;
 }
-.main__inner .article__catalog__container__inner#rings {
+.catalog__inner#rings {
   grid-area: rings;
 }
-.main__inner .article__catalog__container__inner#earring {
+.catalog__inner#earring {
   grid-area: earring;
 }
 
+.main__inner {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.main__inner .article__sale {
+  width: 100%;
+}
+.main__inner .article__catalog {
+  margin-top: 15px;
+}
+
 @media (max-width: 1170px) {
-  .article__catalog__container {
+  .catalog__container {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: 1fr 1fr !important;
     grid-template-areas: "earring  rings" "pendant pendant" !important;
   }
-  .article__catalog__container #pendant {
+  .catalog__container #pendant {
     grid-column-start: 1 !important;
     grid-column-end: 3 !important;
   }
@@ -122,20 +124,18 @@
   .article__sale__box:last-child {
     margin-bottom: 0px !important;
   }
-
-  .article__catalog__title {
+  .catalog__title {
     text-align: center !important;
   }
-
-  .article__catalog {
+  .catalog {
     justify-content: center !important;
   }
-  .article__catalog__container {
+  .catalog__container {
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(3, 1fr) !important;
     grid-template-areas: "earring" "rings" "pendant" !important;
   }
-  .article__catalog__container #pendant {
+  .catalog__container #pendant {
     grid-column-start: unset !important;
     grid-column-end: unset !important;
   }

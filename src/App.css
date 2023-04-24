@@ -68,7 +68,7 @@
   flex-direction: column;
   overflow: hidden;
 }
-.root__inner._fixed {
+.root__inner.-fixed {
   position: fixed;
   overflow-y: scroll !important;
 }
@@ -82,15 +82,19 @@
   margin: 25px 0px;
 }
 
-._active {
+.-active {
   display: flex !important;
 }
 
-._hidden {
+.-hidden {
   display: none !important;
 }
 
-._fixed {
+.-fixed {
   width: 100% !important;
   position: fixed !important;
+}
+
+.root__inner.-fixed::-webkit-scrollbar {
+  display: none !important;
 }/*# sourceMappingURL=App.css.map */
