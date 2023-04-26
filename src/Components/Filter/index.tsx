@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Filter.scss";
+import "./Filter.css";
 import Search from "../Search";
 
 type FilterProps = {
