@@ -1,15 +1,15 @@
 /*---Components---*/
-.nav {
+.nav#aside {
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.nav__link {
+.nav#aside .nav__link {
   position: relative;
   margin: 15px 0px;
 }
-.nav__link:after {
+.nav#aside .nav__link:after {
   content: "";
   width: 100%;
   position: absolute;
@@ -21,10 +21,10 @@
   transition: 0.3s;
   transform: scaleX(0);
 }
-.nav__link:hover:after {
+.nav#aside .nav__link:hover:after {
   transform: scaleX(1);
 }
-.nav #earring::before {
+.nav#aside #earring::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -36,7 +36,7 @@
   background-repeat: no-repeat;
   background-size: 25px 25px;
 }
-.nav #rings::before {
+.nav#aside #rings::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -48,7 +48,7 @@
   background-repeat: no-repeat;
   background-size: 25px 25px;
 }
-.nav #pendant::before {
+.nav#aside #pendant::before {
   content: "";
   position: absolute;
   left: -32px;

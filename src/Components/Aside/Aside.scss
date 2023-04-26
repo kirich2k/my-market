@@ -1,10 +1,10 @@
 /*---Components---*/
-.nav {
+.nav#aside {
     display: flex;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    &__link {
+    .nav__link {
         position: relative;
         margin: 15px 0px;
         &:after {

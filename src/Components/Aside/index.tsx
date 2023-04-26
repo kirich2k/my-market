@@ -4,7 +4,7 @@ import "./Aside.css";
 const Aside: React.FC =() => {
     return (
         <aside className="aside">
-            <nav className="aside__nav nav">
+            <nav className="aside__nav nav" id="aside">
                 <Link to="/earring" className="nav__link" id="earring">
                     Серьги
                 </Link>
