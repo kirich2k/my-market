@@ -70,7 +70,7 @@ h6 {
 
 html,
 body {
-    height: calc(100vh + 0.5px);
+    height: 100vh;
     line-height: 1;
     font-size: 16px;
     color: black;
