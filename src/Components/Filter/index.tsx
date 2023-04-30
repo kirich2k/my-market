@@ -26,17 +26,28 @@ const Filter: React.FC<FilterProps> = ({
         propsChangeListVisible(!propsListVisible);
     };
     const sortRef = useRef<HTMLDivElement>(null);
-    React.useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (!event.path.includes(sortRef.current)) {
-                propsChangeListVisible(false);
-            }
-        };
-        document.body.addEventListener("click", handleClickOutside);
-        return () => {
-            document.body.removeEventListener("click", handleClickOutside);
-        };
-    }, [propsChangeListVisible]);
+    const sortRefSelect = useRef<HTMLDivElement>(null);
+    // React.useEffect(() => {
+    //     const handleClickOutside = (event: any) => {
+    //         console.log(event.srcElement.parentElement);
+    //         if (event.srcElement !== sortRef.current) {
+    //             propsChangeListVisible(false);
+    //         } 
+    //         if (event.srcElement?.parentElement !== sortRef.current) {
+    //             propsChangeListVisible(false);
+    //         } 
+    //         if (
+    //             event.srcElement?.parentElement.srcElement?.parentElement !==
+    //             sortRef.current
+    //         ) {
+    //             propsChangeListVisible(false);
+    //         }
+    //     };
+    //     document.body.addEventListener("click", handleClickOutside);
+    //     return () => {
+    //         document.body.removeEventListener("click", handleClickOutside);
+    //     };
+    // }, [propsChangeListVisible]);
     function empty() {}
     const delActiveCategories = () => {
         propsChangeCategoryId(-1);
@@ -44,15 +55,15 @@ const Filter: React.FC<FilterProps> = ({
     return (
         <>
             {activeCategories === -1 && <Search />}
-            <div className="filter__inner">
-                <div className="filter__inner__categories">
+            <div className="filter">
+                <div className="filter__categories">
                     {categories.map((n, id) => (
                         <button
                             key={id}
                             className={
                                 activeCategories === id
-                                    ? "filter__inner__categories__btn _active"
-                                    : "filter__inner__categories__btn"
+                                    ? "filter__btn -active"
+                                    : "filter__btn"
                             }
                             onClick={() => {
                                 activeCategories === id
@@ -62,30 +73,26 @@ const Filter: React.FC<FilterProps> = ({
                         >
                             {n}
                             <span
-                                className="filter__inner__categories__btn__close"
+                                className="filter__btn-close"
                                 onClick={() => delActiveCategories()}
                             ></span>
                         </button>
                     ))}
                 </div>
-                <div
-                    ref={sortRef}
-                    className="filter__inner__sort"
-                    onClick={changeList}
-                >
+                <div ref={sortRef} className="sort" onClick={changeList}>
                     Сортировать по:
-                    <span className="filter__inner__sort__select">
+                    <span className="sort__select" ref={sortRefSelect}>
                         {listLine[propsActiveListLine]}
                     </span>
                     {propsListVisible && (
-                        <ul className="filter__inner__sort__list">
+                        <ul className="sort__list">
                             {listLine.map((name, i) => (
                                 <li
                                     key={i}
                                     className={
                                         propsActiveListLine === i
-                                            ? "filter__inner__sort__list__inner _active"
-                                            : "filter__inner__sort__list__inner"
+                                            ? "sort__inner -active"
+                                            : "sort__inner"
                                     }
                                     onClick={() => propsChangeActiveListLine(i)}
                                 >
@@ -98,6 +105,6 @@ const Filter: React.FC<FilterProps> = ({
             </div>
         </>
     );
-}
+};
 
 export default Filter;

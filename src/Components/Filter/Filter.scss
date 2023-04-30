@@ -1,5 +1,5 @@
 $grey-border-color: #d0d0d0;
-.filter__inner {
+.filter {
     width: 100%;
     display: flex;
     align-items: center;
@@ -11,129 +11,129 @@ $grey-border-color: #d0d0d0;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        &__btn {
-            margin: 5px 0px;
-            margin-right: 10px;
-            padding: 5px 15px;
-            border: 1px solid $grey-border-color;
-            border-radius: 15px;
-            transition: all 0.2s linear;
-            &__close {
-                position: relative;
-                display: none;
-                width: 15px;
-                height: 15px;
-                margin-left: 5px;
-                cursor: pointer;
-                &::before {
-                    display: none;
-                    position: absolute;
-                    right: 0px;
-                    top: 7.5px;
-                    content: "";
-                    height: 1px;
-                    width: 100%;
-                    background-color: black;
-                    transform: rotate(45deg);
-                    transition: all 0.2s linear;
-                }
-                &::after {
-                    display: none;
-                    position: absolute;
-                    right: 0px;
-                    top: 7.5px;
-                    content: "";
-                    height: 1px;
-                    width: 100%;
-                    background-color: black;
-                    transform: rotate(-45deg);
-                    transition: all 0.2s linear;
-                }
+    }
+    &__btn {
+        margin: 5px 0px;
+        margin-right: 10px;
+        padding: 5px 15px;
+        border: 1px solid $grey-border-color;
+        border-radius: 15px;
+        transition: all 0.2s linear;
+        &.-active {
+            .filter__btn-close {
+                display: block;
+                z-index: 15;
             }
-            &._active {
-                .filter__inner__categories__btn__close {
-                    display: block;
-                    z-index: 15;
-                }
-                .filter__inner__categories__btn__close::before,
-                .filter__inner__categories__btn__close::after {
-                    display: block;
-                }
-                display: flex;
-                align-items: center;
-                padding: 5px 15px 5px 15px !important;
-                color: red;
-                cursor: default; 
+            .filter__btn-close::before,
+            .filter__btn-close::after {
+                display: block;
             }
-            &:last-child {
-                margin-right: 0px;
-            }
-            &:hover {
-                color: red;
-            }
+            display: flex;
+            align-items: center;
+            padding: 5px 15px 5px 15px !important;
+            color: red;
+            cursor: default;
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+        &:hover {
+            color: red;
         }
     }
-    &__sort {
+    &__btn-close {
         position: relative;
+        display: none;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        cursor: pointer;
+        &::before {
+            display: none;
+            position: absolute;
+            right: 0px;
+            top: 7.5px;
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: black;
+            transform: rotate(45deg);
+            transition: all 0.2s linear;
+        }
+        &::after {
+            display: none;
+            position: absolute;
+            right: 0px;
+            top: 7.5px;
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: black;
+            transform: rotate(-45deg);
+            transition: all 0.2s linear;
+        }
+    }
+}
+.sort {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__select {
+        position: relative;
+        color: red;
+        margin-left: 5px;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            bottom: -2px;
+            left: 0px;
+            content: "";
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed red;
+        }
+    }
+    &__list {
+        position: absolute;
+        bottom: -110px;
+        left: 0px;
+        max-width: 270px;
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        &__select {
-            position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        list-style: none;
+        color: black;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid $grey-border-color;
+        border-radius: 15px;
+        z-index: 30;
+    }
+    &__inner {
+        position: relative;
+        width: 100%;
+        padding: 15px;
+        &.-active {
             color: red;
-            margin-left: 5px;
-            cursor: pointer;
-            &::after {
-                position: absolute;
-                bottom: -2px;
-                left: 0px;
-                content: "";
-                width: 100%;
-                height: 1px;
-                border-bottom: 1px dashed red;
+            background-color: #ffecec;
+            &:first-child {
+                border-radius: 15px 15px 0px 0px;
+            }
+            &:last-child {
+                border-radius: 0px 0px 15px 15px;
             }
         }
-        &__list {
-            position: absolute;
-            bottom: -110px;
-            left: 0px;
-            max-width: 270px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            list-style: none;
-            color: black;
-            cursor: pointer;
-            background-color: white;
-            border: 1px solid $grey-border-color;
-            border-radius: 15px;
-            z-index: 30;
-            &__inner {
-                position: relative;
-                width: 100%;
-                padding: 15px;
-                &._active {
-                    color: red;
-                    background-color: #ffecec;
-                    &:first-child {
-                        border-radius: 15px 15px 0px 0px;
-                    }
-                    &:last-child {
-                        border-radius: 0px 0px 15px 15px;
-                    }
-                }
-                &:hover {
-                    color: red;
-                    background-color: #f4f4f4;
-                    &:first-child {
-                        border-radius: 15px 15px 0px 0px;
-                    }
-                    &:last-child {
-                        border-radius: 0px 0px 15px 15px;
-                    }
-                }
+        &:hover {
+            color: red;
+            background-color: #f4f4f4;
+            &:first-child {
+                border-radius: 15px 15px 0px 0px;
+            }
+            &:last-child {
+                border-radius: 0px 0px 15px 15px;
             }
         }
     }

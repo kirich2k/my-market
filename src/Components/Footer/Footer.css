@@ -1,28 +1,5 @@
-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  margin-top: auto;
-}
-footer .footer__inner {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 30px 10px;
-}
-footer .footer__inner__logo {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-footer .footer__inner__logo img {
-  width: 200px;
-}
-footer .footer__inner__info__title {
+/*---Components---*/
+.info__title {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -30,17 +7,17 @@ footer .footer__inner__info__title {
   font-family: "Roboto-Bold";
   font-size: 20px;
 }
-footer .footer__inner__info__title li, footer .footer__inner__info__title__link {
+.info li, .info__link {
   position: relative;
   margin: 10px 0px;
   font-family: "Roboto-Regular";
   font-size: 17px;
   list-style-type: none;
 }
-footer .footer__inner__info__title li:first-child, footer .footer__inner__info__title__link:first-child {
+.info li:first-child, .info__link:first-child {
   margin-top: 20px;
 }
-footer .footer__inner__info__title__link:after {
+.info li:after, .info__link:after {
   content: "";
   width: 100%;
   position: absolute;
@@ -52,24 +29,25 @@ footer .footer__inner__info__title__link:after {
   transition: 0.3s;
   transform: scaleX(0);
 }
-footer .footer__inner__info__title__link:hover:after {
+.info li:hover:after, .info__link:hover:after {
   transform: scaleX(1);
 }
-footer .footer__inner__contact {
+
+.contact {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-footer .footer__inner__contact__title {
+.contact__title {
   font-family: "Roboto-Bold";
   font-size: 20px;
 }
-footer .footer__inner__contact__number {
+.contact__number {
   position: relative;
   margin-top: 20px;
   margin-bottom: 10px;
 }
-footer .footer__inner__contact__number::before {
+.contact__number::before {
   content: "";
   position: absolute;
   left: -24px;
@@ -81,12 +59,12 @@ footer .footer__inner__contact__number::before {
   background-repeat: no-repeat;
   background-size: 35px 35px;
 }
-footer .footer__inner__contact__mail {
+.contact__mail {
   position: relative;
   margin-bottom: 10px;
   text-decoration: underline;
 }
-footer .footer__inner__contact__mail::before {
+.contact__mail::before {
   content: "";
   position: absolute;
   left: -27px;
@@ -98,7 +76,7 @@ footer .footer__inner__contact__mail::before {
   background-repeat: no-repeat;
   background-size: 22px 22px;
 }
-footer .footer__inner__contact__img {
+.contact__img {
   max-width: 150px;
   width: 100%;
   display: inline-flex;
@@ -107,14 +85,39 @@ footer .footer__inner__contact__img {
   align-items: center;
   margin-top: 20px;
 }
-footer .footer__inner__contact__img__link {
+.contact__img-vk, .contact__img-instagram {
   transition: all 0.2s linear;
 }
-footer .footer__inner__contact__img__link:hover {
+.contact__img-vk:hover, .contact__img-instagram:hover {
   transform: scale(1.1);
 }
-footer .footer__inner__contact__img__link img {
+.contact__img-vk img, .contact__img-instagram img {
   width: 40px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin-top: auto;
+}
+.footer__inner {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 30px 10px;
+}
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer__logo img {
+  width: 200px;
 }
 
 @media (max-width: 600px) {
@@ -123,7 +126,8 @@ footer .footer__inner__contact__img__link img {
     align-items: center !important;
     justify-content: unset !important;
   }
-  .footer__inner div:nth-child(1), .footer__inner div:nth-child(2) {
+  .footer__inner div:nth-child(1),
+.footer__inner div:nth-child(2) {
     margin-bottom: 30px !important;
   }
   .footer__inner__contact {

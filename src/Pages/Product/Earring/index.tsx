@@ -47,29 +47,21 @@ const ItemsEarring: React.FC<ItemsEarringProps> = ({id,img,name,price}) => {
         isAdded === false ? added() : empty();
     };
     return (
-        <div className="items__container__product">
-            <div className="items__container__product__inner">
-                <div className="items__container__product__inner__img_inner">
-                    <img
-                        src={img}
-                        alt={'"' + id + '"'}
-                        className="items__container__product__inner__img"
-                    />
+        <div className="items__product product">
+            <div className="product__inner">
+                <div className="product__img-inner">
+                    <img src={img} alt={'"' + id + '"'} />
                 </div>
-                <div className="items__container__product__inner__footer">
-                    <span className="items__container__product__inner__footer__text">
-                        {name}
-                    </span>
-                    <div className="items__container__product__inner__footer__price_container">
-                        <span className="items__container__product__inner__footer__price_container__price_title">
-                            Цена:
-                        </span>
-                        <div className="items__container__product__inner__footer__price_container__div">
-                            <span className="items__container__product__inner__footer__price_container__div__price">
+                <div className="product__footer product-footer">
+                    <span className="product-footer__text">{name}</span>
+                    <div className="product-footer__price price-container">
+                        <span className="price-container__title">Цена:</span>
+                        <div className="price-container__div">
+                            <span className="price-container__price">
                                 {" " + price} руб.
                             </span>
                             <img
-                                className="items__container__product__inner__footer__price_container__div__btn"
+                                className="price-container__btn"
                                 src={isAdded ? check : plus}
                                 onClick={() => AddToBasket()}
                                 alt="basket"

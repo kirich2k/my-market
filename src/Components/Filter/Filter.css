@@ -1,4 +1,4 @@
-.filter__inner {
+.filter {
   width: 100%;
   display: flex;
   align-items: center;
@@ -6,13 +6,13 @@
   flex-direction: row;
   margin: 0px 0px 15px;
 }
-.filter__inner__categories {
+.filter__categories {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
 }
-.filter__inner__categories__btn {
+.filter__btn {
   margin: 5px 0px;
   margin-right: 10px;
   padding: 5px 15px;
@@ -20,7 +20,28 @@
   border-radius: 15px;
   transition: all 0.2s linear;
 }
-.filter__inner__categories__btn__close {
+.filter__btn.-active {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 15px !important;
+  color: red;
+  cursor: default;
+}
+.filter__btn.-active .filter__btn-close {
+  display: block;
+  z-index: 15;
+}
+.filter__btn.-active .filter__btn-close::before,
+.filter__btn.-active .filter__btn-close::after {
+  display: block;
+}
+.filter__btn:last-child {
+  margin-right: 0px;
+}
+.filter__btn:hover {
+  color: red;
+}
+.filter__btn-close {
   position: relative;
   display: none;
   width: 15px;
@@ -28,7 +49,7 @@
   margin-left: 5px;
   cursor: pointer;
 }
-.filter__inner__categories__btn__close::before {
+.filter__btn-close::before {
   display: none;
   position: absolute;
   right: 0px;
@@ -40,7 +61,7 @@
   transform: rotate(45deg);
   transition: all 0.2s linear;
 }
-.filter__inner__categories__btn__close::after {
+.filter__btn-close::after {
   display: none;
   position: absolute;
   right: 0px;
@@ -52,40 +73,20 @@
   transform: rotate(-45deg);
   transition: all 0.2s linear;
 }
-.filter__inner__categories__btn._active {
-  display: flex;
-  align-items: center;
-  padding: 5px 15px 5px 15px !important;
-  color: red;
-  cursor: default;
-}
-.filter__inner__categories__btn._active .filter__inner__categories__btn__close {
-  display: block;
-  z-index: 15;
-}
-.filter__inner__categories__btn._active .filter__inner__categories__btn__close::before,
-.filter__inner__categories__btn._active .filter__inner__categories__btn__close::after {
-  display: block;
-}
-.filter__inner__categories__btn:last-child {
-  margin-right: 0px;
-}
-.filter__inner__categories__btn:hover {
-  color: red;
-}
-.filter__inner__sort {
+
+.sort {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.filter__inner__sort__select {
+.sort__select {
   position: relative;
   color: red;
   margin-left: 5px;
   cursor: pointer;
 }
-.filter__inner__sort__select::after {
+.sort__select::after {
   position: absolute;
   bottom: -2px;
   left: 0px;
@@ -94,7 +95,7 @@
   height: 1px;
   border-bottom: 1px dashed red;
 }
-.filter__inner__sort__list {
+.sort__list {
   position: absolute;
   bottom: -110px;
   left: 0px;
@@ -112,28 +113,28 @@
   border-radius: 15px;
   z-index: 30;
 }
-.filter__inner__sort__list__inner {
+.sort__inner {
   position: relative;
   width: 100%;
   padding: 15px;
 }
-.filter__inner__sort__list__inner._active {
+.sort__inner.-active {
   color: red;
   background-color: #ffecec;
 }
-.filter__inner__sort__list__inner._active:first-child {
+.sort__inner.-active:first-child {
   border-radius: 15px 15px 0px 0px;
 }
-.filter__inner__sort__list__inner._active:last-child {
+.sort__inner.-active:last-child {
   border-radius: 0px 0px 15px 15px;
 }
-.filter__inner__sort__list__inner:hover {
+.sort__inner:hover {
   color: red;
   background-color: #f4f4f4;
 }
-.filter__inner__sort__list__inner:hover:first-child {
+.sort__inner:hover:first-child {
   border-radius: 15px 15px 0px 0px;
 }
-.filter__inner__sort__list__inner:hover:last-child {
+.sort__inner:hover:last-child {
   border-radius: 0px 0px 15px 15px;
 }/*# sourceMappingURL=Filter.css.map */

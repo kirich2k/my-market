@@ -1,10 +1,111 @@
-footer {
+/*---Components---*/
+.info {
+    &__title {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        font-family: "Roboto-Bold";
+        font-size: 20px;
+    }
+    li,
+    &__link {
+        position: relative;
+        margin: 10px 0px;
+        font-family: "Roboto-Regular";
+        font-size: 17px;
+        list-style-type: none;
+        &:first-child {
+            margin-top: 20px;
+        }
+        &:after {
+            content: "";
+            width: 100%;
+            position: absolute;
+            margin-top: 5px;
+            height: 1px;
+            left: 0;
+            bottom: -3px;
+            background-color: red;
+            transition: 0.3s;
+            transform: scaleX(0);
+        }
+        &:hover:after {
+            transform: scaleX(1);
+        }
+    }
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &__title {
+        font-family: "Roboto-Bold";
+        font-size: 20px;
+    }
+    &__number {
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: -18px;
+            width: 35px;
+            height: 35px;
+            background-image: url(./img/phone.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 35px 35px;
+        }
+    }
+
+    &__mail {
+        position: relative;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: -2px;
+            width: 22px;
+            height: 22px;
+            background-image: url(./img/post.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 22px 22px;
+        }
+    }
+    &__img {
+        max-width: 150px;
+        width: 100%;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    &__img-vk,
+    &__img-instagram {
+        transition: all 0.2s linear;
+        &:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 40px;
+        }
+    }
+}
+
+.footer {
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: white;
     margin-top: auto;
-    .footer__inner {
+    &__inner {
         max-width: 1200px;
         width: 100%;
         display: flex;
@@ -12,124 +113,13 @@ footer {
         justify-content: space-between;
         flex-direction: row;
         padding: 30px 10px;
-
-        &__logo {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-
-            img {
-                width: 200px;
-            }
-        }
-
-        &__info {
-            &__title {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                font-family: "Roboto-Bold";
-                font-size: 20px;
-
-                li, &__link {
-                    position: relative;
-                    margin: 10px 0px;
-                    font-family: "Roboto-Regular";
-                    font-size: 17px;
-                    list-style-type: none;
-
-                    &:first-child {
-                        margin-top: 20px;
-                    }
-                }
-                &__link {
-                    &:after {
-                        content: "";
-                        width: 100%;
-                        position: absolute;
-                        margin-top: 5px;
-                        height: 1px;
-                        left: 0;
-                        bottom: -3px;
-                        background-color: red;
-                        transition: 0.3s;
-                        transform: scaleX(0);
-                    }
-
-                    &:hover:after {
-                        transform: scaleX(1);
-                    }
-                }
-            }
-        }
-
-        &__contact {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-
-            &__title {
-                font-family: "Roboto-Bold";
-                font-size: 20px;
-            }
-
-            &__number {
-                position: relative;
-                margin-top: 20px;
-                margin-bottom: 10px;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: -24px;
-                    top: -18px;
-                    width: 35px;
-                    height: 35px;
-                    background-image: url(./img/phone.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: 35px 35px;
-                }
-            }
-
-            &__mail {
-                position: relative;
-                margin-bottom: 10px;
-                text-decoration: underline;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: -27px;
-                    top: -2px;
-                    width: 22px;
-                    height: 22px;
-                    background-image: url(./img/post.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: 22px 22px;
-                }
-            }
-
-            &__img {
-                max-width: 150px;
-                width: 100%;
-                display: inline-flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 20px;
-                &__link {
-                    transition: all 0.2s linear;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                    img {
-                        width: 40px;
-                    }
-                }
-            }
+    }
+    &__logo {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img {
+            width: 200px;
         }
     }
 }
@@ -139,7 +129,8 @@ footer {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: unset !important;
-        & div:nth-child(1), div:nth-child(2) {
+        & div:nth-child(1),
+        div:nth-child(2) {
             margin-bottom: 30px !important;
         }
         &__contact {
